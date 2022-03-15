@@ -1,0 +1,7 @@
+C:\Users\rapha\source\repos\testeRPG\testeRPG\bin\Debug\testeRPG.exe.config
+C:\Users\rapha\source\repos\testeRPG\testeRPG\bin\Debug\testeRPG.exe
+C:\Users\rapha\source\repos\testeRPG\testeRPG\bin\Debug\testeRPG.pdb
+C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.csproj.AssemblyReference.cache
+C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.csproj.CoreCompileInputs.cache
+C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.exe
+C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.pdb
