@@ -16,9 +16,10 @@ namespace testeRPG
         public int vidaMax;
         public Status status;
         public int moedas = 0;
+        SlotItem SlotItem = new SlotItem();
 
         public void Equipar(Armas armas)
-         {
+        {
             this.status.agilidade += armas.agilidade;
             this.status.forca += armas.forca;
             this.status.defesa += armas.defesa;
@@ -38,6 +39,7 @@ namespace testeRPG
                 }
                 this.corpo.setDireita(true);
                 this.corpo.setEsquerda(true);
+                SlotItem.setMaoDir(armas); //usa como se fosse para as duas maos
                 return;
             }
             else if (armas.UmaMao)
@@ -55,6 +57,8 @@ namespace testeRPG
                         this.ataqueMagic += armas.atackMagi;
                         Console.WriteLine("Arma equipada");
                         this.corpo.setDireita(true);
+
+                        SlotItem.setMaoDir(armas);
                         return;
                     }
                     else if (this.corpo.getDireita() == true)
@@ -79,6 +83,7 @@ namespace testeRPG
                         this.ataqueMagic += armas.atackMagi;
                         Console.WriteLine("Arma equipada");
                         this.corpo.setEsquerda(true);
+                        SlotItem.setMaoEsq(armas);
                         return;
                     }
                     else if (this.corpo.getEsquerda() == true)
@@ -94,7 +99,7 @@ namespace testeRPG
                     }
                 }
             }
-            else if(armas.cabeca == true)
+            else if (armas.cabeca == true)
             {
                 if (this.corpo.getCabeca() == true)
                 {
@@ -139,9 +144,9 @@ namespace testeRPG
                 this.corpo.setPernas(true);
                 return;
             }
-            
+
         }
-       
+
         public void Desequipar(Armas armas)
         {
             this.status.agilidade -= armas.agilidade;
@@ -151,11 +156,12 @@ namespace testeRPG
             this.ataqueMagic -= armas.atackMagi;
             if (armas.DuasMaos)
             {
-                if(this.corpo.getDireita() && this.corpo.getEsquerda())
+                if (this.corpo.getDireita() && this.corpo.getEsquerda())
                 {
                     this.corpo.setDireita(false);
                     this.corpo.setEsquerda(false);
                     Console.WriteLine("Desequipado com sucesso");
+                    SlotItem.setMaoDir(null);
                     return;
                 }
                 this.status.agilidade += armas.agilidade;
@@ -171,9 +177,9 @@ namespace testeRPG
             {
                 Console.WriteLine("Mão direita: 1\nMão esquerda: 2");
                 int resp = Int32.Parse(Console.ReadLine());
-                if(resp == 1)
+                if (resp == 1)
                 {
-                    if(this.corpo.getDireita() == false)
+                    if (this.corpo.getDireita() == false)
                     {
                         this.status.agilidade += armas.agilidade;
                         this.status.forca += armas.forca;
@@ -183,11 +189,12 @@ namespace testeRPG
                         Console.WriteLine("Você não possui nada para desequipar");
                         return;
                     }
+                    SlotItem.setMaoDir(null);
                     Console.WriteLine("Desequipado com sucesso");
                     this.corpo.setDireita(false);
                     return; ;
                 }
-                else if(resp == 2)
+                else if (resp == 2)
                 {
                     if (this.corpo.getEsquerda() == false)
                     {
@@ -201,12 +208,13 @@ namespace testeRPG
                     }
                     this.corpo.setEsquerda(false);
                     Console.WriteLine("Desequipado com sucesso");
+                    SlotItem.setMaoEsq(armas);
                     return;
                 }
             }
-            else if(armas.cabeca)
+            else if (armas.cabeca)
             {
-                if(this.corpo.getCabeca() == false)
+                if (this.corpo.getCabeca() == false)
                 {
                     this.status.agilidade += armas.agilidade;
                     this.status.forca += armas.forca;
@@ -252,20 +260,20 @@ namespace testeRPG
                 Console.WriteLine("Desequipado com sucesso");
                 return;
             }
-            
+
             return;
         }
-        
+
 
 
         public void MostraStatus()
         {
-            Console.WriteLine($"\nLevel:{this.level}\nNome: {this.nome}\nVida:{this.status.getVida()}\nMana:{this.status.mana}\nForça{this.status.forca}\nDefesa:{this.status.defesa}\nAgilidade{this.status.agilidade}\nSorte:{this.status.sorte}\nFlechas:{this.status.flechas}\nAtaque magico: {this.ataqueMagic}\nMoedas: {this.moedas}\n");
+            Console.WriteLine($"\nLevel:{this.level}\nNome: {this.nome}\nVida:{this.status.getVida()}\nMana:{this.status.mana}\nForça{this.status.forca}\nDefesa:{this.status.defesa}\nAgilidade{this.status.agilidade}\nSorte:{this.status.sorte}\nFlechas:{this.status.flechas}\nAtaque magico: {this.ataqueMagic}\nMoedas: {this.moedas}\nmao direita/ duas maos:{SlotItem.mostrarDireita()}\nmaos esquerda: {SlotItem.mostrarEsquerda()}\n");
         }
         public float ataque()
         {
             float dano = (this.status.forca + this.status.agilidade) * 1 + (new Random(DateTime.Now.Millisecond).Next(0, this.status.sorte));
-            
+
             return dano;
         }
         public void setStatus(Status status)

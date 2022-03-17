@@ -69,6 +69,7 @@
     <Compile Include="itens\armadura\PeitoralArqueiro.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlotItem.cs" />
     <Compile Include="Status.cs" />
   </ItemGroup>
   <ItemGroup>

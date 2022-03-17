@@ -5,3 +5,10 @@ C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.csproj.Assembly
 C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.csproj.CoreCompileInputs.cache
 C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.exe
 C:\Users\rapha\source\repos\testeRPG\testeRPG\obj\Debug\testeRPG.pdb
+C:\Users\rapha\Documents\GitHub\RPG\testeRPG\testeRPG\bin\Debug\testeRPG.exe.config
+C:\Users\rapha\Documents\GitHub\RPG\testeRPG\testeRPG\bin\Debug\testeRPG.exe
+C:\Users\rapha\Documents\GitHub\RPG\testeRPG\testeRPG\bin\Debug\testeRPG.pdb
+C:\Users\rapha\Documents\GitHub\RPG\testeRPG\testeRPG\obj\Debug\testeRPG.csproj.AssemblyReference.cache
+C:\Users\rapha\Documents\GitHub\RPG\testeRPG\testeRPG\obj\Debug\testeRPG.csproj.CoreCompileInputs.cache
+C:\Users\rapha\Documents\GitHub\RPG\testeRPG\testeRPG\obj\Debug\testeRPG.exe
+C:\Users\rapha\Documents\GitHub\RPG\testeRPG\testeRPG\obj\Debug\testeRPG.pdb
